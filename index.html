@@ -8,7 +8,7 @@
   </head>
   <body>
     <header
-      class="flex sticky z-190 top-0 justify-between px-6 items-center bg-white shadow-md lg:px-28 h-[65px]"
+      class=" relative flex sticky z-190 top-0 justify-between px-6 items-center bg-white shadow-md lg:px-28 h-[65px]"
     >
       <img class="p-2" src="assets/logo.png" width="100px" alt="" />
       <nav class="hidden md:block">
@@ -519,10 +519,13 @@
     <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
     <script>
   function menuOpen() {
-    const nav = document.getElementById('navmini');
-    nav.classList.toggle('hidden');
+  const nav = document.getElementById('navmini');
+  if (nav.style.display === "none" || nav.style.display === "") {
+    nav.style.display = "block";
+  } else {
+    nav.style.display = "none";
   }
-</script>
-
-  </body>
+  }
+    </script>
+    </body>
 </html>
